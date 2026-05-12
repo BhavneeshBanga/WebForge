@@ -2,12 +2,19 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=180&section=header&text=WebForge&fontSize=60&fontColor=fff&animation=fadeIn&fontAlignY=38&desc=AI%20Powered%20Website%20Builder&descAlignY=60&descSize=18" width="100%"/>
 
+<h1>🚀 WebForge</h1>
 
-# 🚀 WebForge
+<p><strong>AI-powered website builder</strong> — type your idea, enter your shop details, get a complete modern website in minutes.</p>
 
-> **AI-powered website builder** — type your idea, enter your shop details, get a complete modern website in minutes.
+<p>Built on top of <strong>Sarvam AI (105B)</strong>, WebForge generates a full architecture blueprint and then sequentially produces <code>index.html</code>, <code>style.css</code>, and <code>script.js</code> — saving each file the moment it's ready.</p>
 
-Built on top of **Sarvam AI (105B)**, WebForge generates a full architecture blueprint and then sequentially produces `index.html`, `style.css`, and `script.js` — saving each file the moment it's ready.
+<br/>
+
+![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Sarvam AI](https://img.shields.io/badge/Sarvam_AI-105B-FF6B6B?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-22C55E?style=for-the-badge)
+
+</div>
 
 ---
 
@@ -27,11 +34,12 @@ Built on top of **Sarvam AI (105B)**, WebForge generates a full architecture blu
 
 ```
 webForge/
-├── build.py          ← main script (run this)
-├── .env              ← your API key (create from .env.example)
-├── .env.example      ← template
-├── requirements.txt  ← dependencies
-└── output/           ← generated websites land here
+├── build.py            ← main script (run this)
+├── .env                ← your API key (create from .env.example)
+├── .env.example        ← template
+├── requirements.txt    ← dependencies
+├── README.md
+└── output/             ← generated websites land here
     └── Shop_Name/
         ├── ARCHITECTURE.md
         ├── index.html
@@ -43,20 +51,20 @@ webForge/
 
 ## ⚙️ Setup
 
-### 1. Clone the repo
+**1. Clone the repo**
 
 ```bash
 git clone https://github.com/your-username/webForge.git
-cd webforge
+cd webForge
 ```
 
-### 2. Install dependencies
+**2. Install dependencies**
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Create your `.env` file
+**3. Create your `.env` file**
 
 ```bash
 cp .env.example .env
@@ -68,7 +76,7 @@ Open `.env` and add your Sarvam API key:
 SARVAM_API_KEY=sk_xxxxxxxxxxxxxxxx
 ```
 
-> Get your API key from [sarvam.ai](https://sarvam.ai)
+> 🔑 Get your API key from [sarvam.ai](https://sarvam.ai)
 
 ---
 
@@ -78,7 +86,7 @@ SARVAM_API_KEY=sk_xxxxxxxxxxxxxxxx
 python build.py
 ```
 
-You will be asked:
+You will be asked a few questions:
 
 ```
 What kind of amazing website do you want to build?
@@ -92,53 +100,61 @@ What kind of amazing website do you want to build?
    📍  Address        : 12, Main Bazar, Ludhiana, Punjab
 ```
 
-### What happens next
-
-| Phase | What generates | Saved immediately |
-|-------|---------------|-------------------|
-| 1/4   | `ARCHITECTURE.md` — full design blueprint | ✅ |
-| 2/4   | `index.html` — semantic HTML with real content | ✅ |
-| 3/4   | `style.css` — glassmorphism, gradients, responsive | ✅ |
-| 4/4   | `script.js` — nav toggle, scroll animations, forms | ✅ |
-
-### Open your website
-
-```bash
-# Windows
-start output\Shop_Name\index.html
-
-# macOS
-open output/Shop_Name/index.html
-
-# Linux
-xdg-open output/Shop_Name/index.html
-```
-
 ---
 
-## 🧠 How it works
+## 🔄 How It Works
 
 ```
 User Input (idea + shop details)
-        │
-        ▼
- [Phase 1] Architecture LLM call
-        │  → Saves ARCHITECTURE.md
-        ▼
- [Phase 2] HTML LLM call  (uses architecture + shop details)
-        │  → Saves index.html
-        ▼
- [Phase 3] CSS LLM call   (uses architecture)
-        │  → Saves style.css
-        ▼
- [Phase 4] JS LLM call    (uses architecture)
-           → Saves script.js
+          │
+          ▼
+  [Phase 1/4]  Architecture LLM call
+          │    └─ 💾 Saves ARCHITECTURE.md
+          ▼
+  [Phase 2/4]  HTML LLM call
+          │    └─ 💾 Saves index.html
+          ▼
+  [Phase 3/4]  CSS LLM call
+          │    └─ 💾 Saves style.css
+          ▼
+  [Phase 4/4]  JavaScript LLM call
+               └─ 💾 Saves script.js
 ```
+
+| Phase | Output | Saved |
+|:-----:|--------|:-----:|
+| 1/4 | `ARCHITECTURE.md` — full design blueprint | ✅ |
+| 2/4 | `index.html` — semantic HTML with real content | ✅ |
+| 3/4 | `style.css` — glassmorphism, gradients, responsive | ✅ |
+| 4/4 | `script.js` — nav toggle, scroll animations, forms | ✅ |
 
 All responses are automatically cleaned:
 - `<think>...</think>` blocks removed
 - Markdown code fences stripped
-- Raw, valid code saved directly
+- Raw, valid code saved directly to disk
+
+---
+
+## 💡 Example Output
+
+**Input**
+
+```
+Website type : Kirana Store
+Shop naam    : Ramji Kirana
+Phone        : +91 99887 76655
+Email        : ramji@gmail.com
+Address      : Sector 22, Chandigarh
+```
+
+**Output** → `output/Ramji_Kirana/`
+
+- Modern dark-themed grocery store website
+- Sticky navigation with mobile hamburger menu
+- Hero section with shop name and CTA button
+- Products/categories section with cards
+- Contact section with real phone, email, and address
+- Smooth scroll + fade-in animations on all sections
 
 ---
 
@@ -149,7 +165,7 @@ httpx>=0.27.0
 python-dotenv>=1.0.0
 ```
 
-Python **3.10+** required.
+> Python **3.10+** required
 
 ---
 
@@ -161,35 +177,15 @@ Python **3.10+** required.
 
 ---
 
-## 💡 Example Output
-
-**Input:**
-```
-Website type : kirana store
-Shop naam    : Ramji Kirana
-Phone        : +91 99887 76655
-Email        : ramji@gmail.com
-Address      : Sector 22, Chandigarh
-```
-
-**Output** (`output/Ramji_Kirana/`):
-- Modern dark-themed grocery store website
-- Sticky navigation with mobile hamburger menu
-- Hero section with shop name and CTA
-- Products/categories section with cards
-- Contact section with real phone, email, address
-- Smooth scroll + fade-in animations
-
----
-
 ## 🤝 Contributing
 
-Pull requests welcome! Some ideas:
+Pull requests welcome! Some ideas for future features:
 
-- [ ] Add image generation for hero sections
-- [ ] Support multi-page websites
-- [ ] Export as ZIP
-- [ ] Live preview in browser on completion
+- [ ] Image generation for hero sections
+- [ ] Multi-page website support
+- [ ] Export output as ZIP
+- [ ] Live browser preview on completion
+- [ ] Dark / light mode toggle generation
 
 ---
 
@@ -199,4 +195,10 @@ MIT License — free to use, modify, and distribute.
 
 ---
 
-<p align="center">Built with ❤️ using <a href="https://sarvam.ai">Sarvam AI</a></p>
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=100&section=footer" width="100%"/>
+
+<p>Built with ❤️ using <a href="https://sarvam.ai">Sarvam AI</a></p>
+
+</div>
